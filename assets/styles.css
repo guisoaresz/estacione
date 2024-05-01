@@ -19,13 +19,13 @@ body {
     flex-direction: column;
     place-items: center;
     vertical-align: center;
-    padding: 50px 40px;
+    padding: 50px 35px;
     border-color: gray;
     min-width: 379px;
 }
 
 form {
-    margin: 20%;
+    margin: 10%;
     text-align: center;
     width: 85%;
     max-height: 100%;
@@ -50,9 +50,16 @@ input {
     font-weight: bold;
     width: 100%;
     color: white;
-    background-color: transparent;
     background-color: #4CAF50;
     border-style: none;
+}
+
+#btnLogar:hover, #btnCadastrar:hover {
+    color: darkgreen;
+}
+
+#btnSubmit:hover {
+    background-color: darkgreen;;
 }
 
 h1, #btnLogar, #btnCadastrar {
@@ -77,6 +84,10 @@ span {
     font-size: 15px;
 }
 
-.container-register {
+.container-register, #formType {
     display: none;
+}
+
+#erro {
+    color: red;
 }
