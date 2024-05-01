@@ -20,12 +20,12 @@
                 $senha = $_POST["txtSenha"];
                 loginUser($user, $senha);
             } else {
-                header("Location: index.php");
+                header("Location: login.php");
                 setErro(0);
             }
         } else if($method == "register"){
             if(!empty($res)){
-                header("Location: index.php");
+                header("Location: login.php");
                 setErro(1);
             } else {
                 $email = $_POST["txtEmail"];
@@ -49,7 +49,7 @@
                     $_SESSION["user"] = $user;
                     header("Location: perfil.php");
                 } else {
-                    header("Location: index.php");
+                    header("Location: login.php");
                     setErro(2);
                 }
             }
@@ -82,7 +82,7 @@
     function getErros(){
         if(isset($_SESSION["erro"])){
             $erro = $_SESSION["erro"];
-            echo "<div id='erro'> $erro </div>";
+            echo "<p id='erro'> $erro </p>";
             unset($_SESSION["erro"]);
         }
     }
