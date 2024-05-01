@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container-login, .container-register {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    vertical-align: center;
+    padding: 50px 40px;
+    border-color: gray;
+    min-width: 379px;
+}
+
+form {
+    margin: 20%;
+    text-align: center;
+    width: 85%;
+    max-height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.container-login, .container-register, button, input {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+}
+
+input {
+    padding: 5%;
+    width: 100%;
+    padding-inline-start: 5%;
+}
+
+#btnSubmit {
+    padding: 3%;
+    font-weight: bold;
+    width: 100%;
+    color: white;
+    background-color: transparent;
+    background-color: #4CAF50;
+    border-style: none;
+}
+
+h1, #btnLogar, #btnCadastrar {
+    color: #4CAF50;
+    font-weight: bold;
+    background-color: transparent;
+    border-style: none;
+}
+
+#btnLogar, #btnCadastrar {
+    font-size: 15px;
+}
+
+hr {
+    color: gray;
+    font-weight: bold;
+    width: 100%;
+}
+
+span {
+    margin-top: 10%;
+    font-size: 15px;
+}
+
+.container-register {
+    display: none;
+}
