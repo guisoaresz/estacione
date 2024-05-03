@@ -1,9 +1,14 @@
 <?php
     include "inc/conexao.php";
 
-    function checkStatus(){
+    function checkStatus($page){
         if(isset($_SESSION["user"])){
             header("Location: perfil.php");
+            exit;
+        } else {
+            if($page != "login"){
+                header("Location: login.php");
+            }
         }
     }
 

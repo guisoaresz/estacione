@@ -2,8 +2,7 @@
     include ('inc/functions.php');
     include ('inc/templates.php');
     headerTemp("login");
-    checkStatus();
-
+    checkStatus("login");
 
     if(isset($_POST["txtFormType"])){
         $formType = $_POST["txtFormType"];
