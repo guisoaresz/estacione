@@ -20,7 +20,6 @@
             <script src="https://kit.fontawesome.com/e1aca6f76d.js" crossorigin="anonymous"></script>
             <script src="assets/scripts.js"></script>
             <title>eStacione</title>
-        </head>
-        <body>';
+        </head>';
     }
 ?>
