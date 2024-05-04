@@ -29,7 +29,7 @@
         <div class="container">
             <div class="intro">
                 <div class="intro-text">
-                    <p>Controle total dos seus estacionamentos na ponta dos seus dedos.</p>
+                    <p id="intro-text-1">Controle total dos seus estacionamentos na ponta dos seus dedos.</p>
                 </div>
             </div>
             <div class="vantagens">
@@ -40,9 +40,8 @@
                             <h3>Organização</h3>
                         </div>
                         <div class="card-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nunc mi lorem, lacinia nec tempor ut, dignissim non lacus.
-                            Nullam blandit.</p>
+                            <p>Ofeceremos a solução ideal
+                            para uma organização eficiente e sem complicações.</p>
                         </div>
                     </div>
                     <div class="card-2">
@@ -50,9 +49,9 @@
                             <h3>Agilidade</h3>
                         </div>
                         <div class="card-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nunc mi lorem, lacinia nec tempor ut, dignissim non lacus.
-                            Nullam blandit.</p>
+                            <p>Projetado para oferecer máxima agilidade,
+                            simplificando o processo de reserva e permitindo
+                            que todos economizem tempo e esforço.</p>
                         </div>
                     </div>
                     <div class="card-3">
@@ -60,9 +59,9 @@
                             <h3>Tecnologia</h3>
                         </div>
                         <div class="card-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nunc mi lorem, lacinia nec tempor ut, dignissim non lacus.
-                            Nullam blandit.</p>
+                            <p>Site moderno e tecnológico para
+                            tornar a experiência dos usuários
+                            mais eficiente e agradável.</p>
                         </div>
                     </div>
                 </div>
