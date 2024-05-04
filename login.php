@@ -1,9 +1,9 @@
 <?php
     include ('inc/functions.php');
     include ('inc/templates.php');
-    headerTemp("login");
+    headerStructure();
     checkStatus("login");
-
+    
     if(isset($_POST["txtFormType"])){
         $formType = $_POST["txtFormType"];
         $user = $_POST["txtUsuario"];
@@ -14,8 +14,9 @@
             checkUser($user, "register");
         }
     } else {
+        headerTemp();
            echo '<div class="container-login">
-                <h1>eStacione</h1>
+                <h1>Autenticação</h1>
                 <form method="post">
                     <input type="text" name="txtFormType" id="formType" value="login"><br>
                     <input type="text" name="txtUsuario" placeholder="Nome de usuário ou email" required minlenght="4" maxlenght="100"><br>
@@ -27,7 +28,7 @@
             </div>
 
             <div class="container-register">
-                <h1>eStacione</h1>
+                <h1>Autenticação</h1>
                 <form method="post">
                     <input type="text" name="txtFormType" id="formType" value="register"><br>
                     <input type="text" name="txtUsuario" placeholder="Nome de usuário" required minlenght="4" maxlenght="25"><br>
@@ -38,6 +39,7 @@
                 <hr>
                 <span>Ja possui uma conta? <button id="btnCadastrar" onclick=toggleMethod(1)>Logar-se</button></span>
             </div>';
+        footerTemp();
     }
 ?>
 </body>
