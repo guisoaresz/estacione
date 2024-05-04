@@ -15,7 +15,8 @@
         }
     } else {
         headerTemp();
-           echo '<div class="container-login">
+           echo '<div class="container-auth">
+            <div class="container-login">
                 <h1>Autenticação</h1>
                 <form method="post">
                     <input type="text" name="txtFormType" id="formType" value="login"><br>
@@ -38,7 +39,7 @@
                 </form>'.getErros().'
                 <hr>
                 <span>Ja possui uma conta? <button id="btnCadastrar" onclick=toggleMethod(1)>Logar-se</button></span>
-            </div>';
+            </div></div>';
         footerTemp();
     }
 ?>
