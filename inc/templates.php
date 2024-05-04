@@ -34,11 +34,14 @@
                         <a href="#">Contato </a>
                     </li>
                 </ul>
-            </div>
-            <div class="header-right">
-                <a href="login.php">Login <i class="fa-solid fa-user"></i></a>
-            </div>
-        </header>';
+            </div>';
+            if(isset($_SESSION["user"])){
+                echo '<div class="header-right"> Perfil<i class="fa-solid fa-user"></i>';
+            } else {
+                echo'<div class="header-right"><a href="login.php">Login<i class="fa-solid fa-user"></i></a>
+                </div>';
+            }
+        echo '</header>';
     }
 
     function footerTemp() {

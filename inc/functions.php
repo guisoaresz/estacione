@@ -3,12 +3,20 @@
 
     function checkStatus($page){
         if(isset($_SESSION["user"])){
-            header("Location: perfil.php");
+            header("Location: index.php");
             exit;
         } else {
             if($page != "login"){
                 header("Location: login.php");
             }
+        }
+    }
+
+    function deslogarUsuario(){
+        if(isset($_POST["deslogarUsuario"])){
+            session_destroy();
+            header("Location: login.php");
+            exit;
         }
     }
 

@@ -1,7 +1,7 @@
 <?php
     include "inc/functions.php";
     include ('inc/templates.php');
-    headerTemp("perfil");
+    headerTemp();
     checkStatus("perfil");
 
     if(isset($_POST["deslogarUsuario"])){

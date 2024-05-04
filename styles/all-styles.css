@@ -51,6 +51,10 @@ header {
     justify-content: flex-end;
 }
 
+.header-right i {
+    margin-left: 10px;
+}
+
 #header-title h1 {
     font-weight: bold;
     font-size: 30px;
