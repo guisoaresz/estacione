@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background-color: rgb(239, 235, 235);
+}
+
+header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+.header-center {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.header-center h1 {
+    color: darkgreen;
+}
+
+.header-left, .header-right {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#header-title h1 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+header ul li {
+    margin: 0px 5px;
+    font-size: 16px;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+header h1:hover, header a:hover {
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.intro, .vantagens {
+    height: 350px;
+    width: 100%;
+    display: flex;
+}
+
+.intro {
+    flex-grow: 1;
+    padding: 25px;
+    text-align: center;
+    background-color: gray;
+}
+
+.intro-text, .vantagens-cards {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    place-content: center;
+    place-items: center;
+}
+
+.intro-text {
+    background-color: white;
+}
+
+.vantagens {
+    background-color: rgb(109, 152, 109);
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+}
+
+#vantages-title {
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.vantagens-cards {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+
+.card-1, .card-2, .card-3 {
+    max-width: 30%;
+    text-align: justify;
+    background-color: white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 1.5em;
+    padding: 20px;
+    height: 100%;
+}
+
+.card-title {
+    text-align: center;
+    padding: 15px;
+    margin: 5px;
+    height: fit-content;
+    background-color: rgb(80, 174, 80);
+    border-radius: 1em 0;
+}
+
+.card-content {
+    display: flex;
+    text-align: center;
+    place-content: center;
+    place-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.footer-left, .footer-right {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#footer-title h3 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+footer ul li {
+    margin: 0px 5px;
+    font-size: 16px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer h3:hover, footer a:hover {
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .card-1, .card-2, .card-3 {
+        flex: 1 0 calc(100%);
+        max-width: 70%;
+    }
+    .vantagens-cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+    header h1 {
+        padding: 0px 10px;
+    }
+    header ul li {
+        margin: 0px 5px;
+        font-size: 10px;
+    }
+}

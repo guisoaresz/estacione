@@ -14,9 +14,7 @@
             checkUser($user, "register");
         }
     } else {
-        echo '
-        <body>
-            <div class="container-login">
+           echo '<div class="container-login">
                 <h1>eStacione</h1>
                 <form method="post">
                     <input type="text" name="txtFormType" id="formType" value="login"><br>

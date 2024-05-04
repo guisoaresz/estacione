@@ -4,10 +4,10 @@
 
         $css = "";
         if($page == "index"){
-            $css = '<link rel="stylesheet" href="assets/stylesIndex.css">';
+            $css = '<link rel="stylesheet" href="styles/index-styles.css">';
         }
         if($page == "login"){
-            $css = '<link rel="stylesheet" href="assets/styles.css">';
+            $css = '<link rel="stylesheet" href="styles/all-styles.css">';
         }
         
         echo '<!DOCTYPE html>
@@ -18,8 +18,9 @@
             $css
             .'
             <script src="https://kit.fontawesome.com/e1aca6f76d.js" crossorigin="anonymous"></script>
-            <script src="assets/scripts.js"></script>
+            <script src="scripts/scripts.js"></script>
             <title>eStacione</title>
-        </head>';
+        </head>
+        ';
     }
 ?>
