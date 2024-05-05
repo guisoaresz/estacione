@@ -36,7 +36,8 @@
                 </ul>
             </div>';
             if(isset($_SESSION["user"])){
-                echo '<div class="header-right"> Perfil<i class="fa-solid fa-user"></i>';
+                echo '<div class="header-right"><a href="perfil.php">Perfil<i class="fa-solid fa-user"></i></a>
+                </div>';
             } else {
                 echo'<div class="header-right"><a href="login.php">Login<i class="fa-solid fa-user"></i></a>
                 </div>';

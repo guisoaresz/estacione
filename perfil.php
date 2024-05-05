@@ -1,8 +1,9 @@
 <?php
     include "inc/functions.php";
     include ('inc/templates.php');
+    headerStructure();
     headerTemp();
-    checkStatus("perfil");
+    checkStatus();
 
     if(isset($_POST["deslogarUsuario"])){
         session_destroy();
