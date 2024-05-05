@@ -28,8 +28,19 @@
                 $senha = $_POST["txtSenha"];
                 loginUser($user, $senha);
             } else {
-                header("Location: login.php");
-                setErro(0);
+                $conn = connect();
+                $stmt = $conn->prepare("SELECT * from usuarios WHERE emailUsuario = :user");
+                $stmt->bindParam(':user', $user, PDO::PARAM_STR);
+            
+                $stmt->execute();
+                $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if(!empty($res)){
+                    $senha = $_POST["txtSenha"];
+                    loginUser($user, $senha);
+                } else {
+                    header("Location: login.php");
+                    setErro(0);
+                }
             }
         } else if($method == "register"){
             if(!empty($res)){
@@ -62,7 +73,26 @@
                 }
             }
         } else {
-            setErro(0);
+            $conn = connect();
+            $stmt = $conn->prepare("SELECT * from usuarios WHERE emailUsuario = :user");
+            $stmt->bindParam(':user', $user, PDO::PARAM_STR);
+        
+            $stmt->execute();
+            $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if(!empty($res)){
+                foreach($res as $rows){
+                    $senhab = $rows["senhaUsuario"];
+                    if($senha == $senhab){                    
+                        $_SESSION["user"] = $rows["userUsuario"];
+                        header("Location: perfil.php");
+                    } else {
+                        header("Location: login.php");
+                        setErro(2);
+                    }
+                }                
+            } else {
+                setErro(0);
+            }
         }
     }
 

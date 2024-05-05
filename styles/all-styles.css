@@ -261,6 +261,8 @@ footer {
     flex-direction: column;
     background-color: white;
     box-shadow: 0px -15px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    bottom: 0;
 }
 
 .footer-center {

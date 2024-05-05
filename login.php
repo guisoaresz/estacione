@@ -14,7 +14,8 @@
         }
     } else {
         headerTemp();
-           echo '<div class="container-auth">
+            getErros();
+            echo '<div class="container-auth">
             <div class="container-login">
                 <h1>Autenticação</h1>
                 <form method="post">
