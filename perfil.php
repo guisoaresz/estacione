@@ -17,5 +17,8 @@
     <form method="post">
         <button type="submit" name="deslogarUsuario">Deslogar</button>
     </form>
+    <?php
+        footerTemp();
+    ?>
 </body>
 </html>
