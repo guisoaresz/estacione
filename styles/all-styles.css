@@ -97,7 +97,7 @@ header h1:hover, header a:hover {
     padding: 50px 35px;
     border-color: gray;
     margin: 50px;
-    width: 50%;
+    width: 30%;
 }
 
 form {
@@ -254,9 +254,12 @@ span {
 
 footer {
     height: 100px;
+    max-height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    place-content: center;
+    place-items: center;
+    flex-direction: column;
     background-color: white;
     box-shadow: 0px -15px 15px rgba(0, 0, 0, 0.3);
 }
@@ -314,20 +317,25 @@ footer h3:hover, footer a:hover {
 }
 
 @media (max-width: 768px) {
+    .intro-text {
+        font-size: 70%;
+    }
     .card-1, .card-2, .card-3 {
         flex: 1 0 calc(100%);
         max-width: 70%;
-    }
-    .container-login, .container-register {
-        flex: 1 0 calc(100%);
-        max-width: 70%;
+        font-size: 70%;
     }
     .vantagens-cards {
         flex-direction: column;
         gap: 15px;
     }
-    header {
+    .container-login, .container-register, .container-auth {
+        flex: 1 0 calc(100%);
+        max-width: 100%;
+    }
+    header, footer {
         padding: 0px;
+        font-size: 50%;
     }
     header h1 {
         padding: 0px 10px;

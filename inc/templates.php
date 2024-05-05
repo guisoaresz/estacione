@@ -48,18 +48,15 @@
     function footerTemp() {
         echo '
         <footer>
-            <div class="footer-center">
-                <h3>Guilherme Soares</h1>
-                <ul>
-                    <li>
-                        <a href="https://github.com/guisoaresz" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/guisxares/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    </li>
-                </ul>
-                <h2>
-            </div>
+            <h3>Guilherme Soares</h3>
+            <ul>
+                <li>
+                    <a href="https://github.com/guisoaresz" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/guisxares/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </li>
+            </ul>
         </footer>';
     }
 ?>
