@@ -254,6 +254,7 @@ span {
     background-color: rgb(233, 231, 231);
     border-radius: 1em 0;
     width: 100%;
+    font-size: 18px;
 }
 
 .card-content {
@@ -264,6 +265,7 @@ span {
     width: 100%;
     padding: 10px;
     margin: 5px;
+    font-size: 14px;
 }
 
 footer {
@@ -341,8 +343,8 @@ footer h3:hover, footer a:hover {
     }
     .card-1, .card-2, .card-3 {
         flex: 1 0 calc(100%);
-        max-width: 70%;
-        font-size: 70%;
+        max-width: 90%;
+        padding: 10px;
     }
     .vantagens-cards {
         flex-direction: column;
