@@ -13,16 +13,34 @@
     
     echo "<main>";
 
-    $user = $_SESSION["user"];
-    echo "<h1> $user, logado com sucesso </h1>";
+    /*$user = $_SESSION["user"];
+    echo "<h1 id='perfilIntro'> $user, logado com sucesso </h1>";*/
 ?>
+    <div class="perfil-container">
+        <div class="perfil-container-left">
+            <div class="perfil-container-opc">
+                <ul>
+                    <li>
+                        <a href="#">Editar perfil</a>
+                    </li>
+                    <li>
+                        <a href="#">Preferências</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="perfil-container-desconect">
+                <form method="post">
+                    <button type="submit" name="deslogarUsuario">Desconectar</button>
+                </form>
+            </div>
+        </div>
+        <div class="perfil-container-sistema">
 
-    <form method="post">
-        <button type="submit" name="deslogarUsuario">Deslogar</button>
-    </form>
+        </div>
+    </div>
+</main>
     <?php
         footerTemp();
     ?>
-</main>
 </body>
 </html>
