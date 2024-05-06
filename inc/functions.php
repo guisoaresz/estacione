@@ -28,9 +28,8 @@
                 $senha = $_POST["txtSenha"];
                 loginUser($user, $senha);
             } else {
-                $conn = connect();
-                $stmt = $conn->prepare("SELECT * from usuarios WHERE emailUsuario = :user");
-                $stmt->bindParam(':user', $user, PDO::PARAM_STR);
+                $stmt = $conn->prepare("SELECT * from usuarios WHERE emailUsuario = :email");
+                $stmt->bindParam(':email', $user, PDO::PARAM_STR);
             
                 $stmt->execute();
                 $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -49,7 +48,7 @@
             } else {
                 $email = $_POST["txtEmail"];
                 $senha = $_POST["txtSenha"];
-                registerUser($user, $email, $senha);
+                registerUser($user, $email, $senha);              
             }
         }
     }
@@ -73,7 +72,6 @@
                 }
             }
         } else {
-            $conn = connect();
             $stmt = $conn->prepare("SELECT * from usuarios WHERE emailUsuario = :user");
             $stmt->bindParam(':user', $user, PDO::PARAM_STR);
         
@@ -100,20 +98,31 @@
 
         $conn = connect();
 
-        $stmt = $conn->prepare("INSERT INTO usuarios(userUsuario, emailUsuario, senhaUsuario) VALUES(:userUsuario, :emailUsuario, :senhaUsuario)");
-        $stmt->bindParam(':userUsuario', $user, PDO::PARAM_STR);
-        $stmt->bindParam(':emailUsuario', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':senhaUsuario', $senha, PDO::PARAM_STR);
+        $stmt = $conn->prepare("SELECT * from usuarios WHERE emailUsuario = :email");
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     
         $stmt->execute();
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if(!empty($res)){
+            header("Location: login.php");
+            setErro(3); 
+        } else {
 
-        $_SESSION["user"] = $user;
-        header("Location: perfil.php");
+            $stmt = $conn->prepare("INSERT INTO usuarios(userUsuario, emailUsuario, senhaUsuario) VALUES(:userUsuario, :emailUsuario, :senhaUsuario)");
+            $stmt->bindParam(':userUsuario', $user, PDO::PARAM_STR);
+            $stmt->bindParam(':emailUsuario', $email, PDO::PARAM_STR);
+            $stmt->bindParam(':senhaUsuario', $senha, PDO::PARAM_STR);
+        
+            $stmt->execute();
+            $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $_SESSION["user"] = $user;
+            header("Location: perfil.php");
+        }
     }
 
     function setErro($erro){
-        $erros = array("Usuário inexistente.", "Usuário já registrado.", "Senha incorreta.");
+        $erros = array("Usuário inexistente.", "Usuário já registrado.", "Senha incorreta.", "Email já registrado.");
         $_SESSION["erro"] = $erros[$erro];
     }
 

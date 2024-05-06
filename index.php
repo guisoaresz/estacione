@@ -10,8 +10,9 @@
         <main>
             <div class="intro">
                 <div class="intro-text">
+                    <i class="fa-solid fa-car-side"></i>
                     <p>Controle total dos seus estacionamentos na ponta dos seus dedos.</p>
-                    <a href="perfil.php">Clique aqui e comece agora mesmo!</a>
+                    <a href="perfil.php">Clique aqui e comece agora mesmo, gratuitamente!</a>
                 </div>
             </div>
             <div class="vantagens">
