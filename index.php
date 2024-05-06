@@ -7,10 +7,11 @@
         <?php
             headerTemp();
         ?>
-        <div class="index-container">
+        <main>
             <div class="intro">
                 <div class="intro-text">
-                    <p id="intro-text-1">Controle total dos seus estacionamentos na ponta dos seus dedos.</p>
+                    <p>Controle total dos seus estacionamentos na ponta dos seus dedos.</p>
+                    <a href="perfil.php">Clique aqui e comece agora mesmo!</a>
                 </div>
             </div>
             <div class="vantagens">
@@ -47,7 +48,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
         <?php
             footerTemp();
         ?>

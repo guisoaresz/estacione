@@ -30,9 +30,6 @@
                     <li>
                         <a href="#">Tutorial</a>
                     </li>
-                    <li>
-                        <a href="#">Contato </a>
-                    </li>
                 </ul>
             </div>';
             if(isset($_SESSION["user"])){

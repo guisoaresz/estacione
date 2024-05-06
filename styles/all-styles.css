@@ -18,7 +18,7 @@ header {
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color: white;
+    background-color: whitesmoke;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
     padding: 0px 50px;
 }
@@ -180,9 +180,15 @@ span {
 }
 
 .intro-text {
+    flex-direction: column;
     background-color: white;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
     border-radius: 1em;
+}
+
+.intro-text a {
+    text-decoration: none;
+    color: darkgreen;
 }
 
 .intro-text, .vantagens-cards {
@@ -212,6 +218,7 @@ span {
 }
 
 .vantagens-cards {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 20px;
@@ -260,10 +267,8 @@ footer {
     place-content: center;
     place-items: center;
     flex-direction: column;
-    background-color: white;
+    background-color: whitesmoke;
     box-shadow: 0px -15px 15px rgba(0, 0, 0, 0.3);
-    position: absolute;
-    bottom: 0;
 }
 
 .footer-center {
@@ -321,6 +326,7 @@ footer h3:hover, footer a:hover {
 @media (max-width: 768px) {
     .intro-text {
         font-size: 70%;
+        padding: 10%;
     }
     .card-1, .card-2, .card-3 {
         flex: 1 0 calc(100%);
@@ -331,9 +337,9 @@ footer h3:hover, footer a:hover {
         flex-direction: column;
         gap: 15px;
     }
-    .container-login, .container-register, .container-auth {
+    .container-login, .container-register {
         flex: 1 0 calc(100%);
-        max-width: 100%;
+        max-width: 80%;
     }
     header, footer {
         padding: 0px;
