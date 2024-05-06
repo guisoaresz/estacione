@@ -237,6 +237,12 @@ span {
     display: flex;
     flex-direction: column;
     place-items: center;
+    transition: opacity,background-color 500ms;
+}
+
+.card-1:hover, .card-2:hover, .card-3:hover {
+    opacity: 90%;
+    background-color: rgba(247, 247, 247);
 }
 
 .card-title {
