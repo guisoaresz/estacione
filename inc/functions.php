@@ -129,7 +129,7 @@
     function getErros(){
         if(isset($_SESSION["erro"])){
             $erro = $_SESSION["erro"];
-            echo "<p id='erro'> $erro </p>";
+            echo "<p id='erro'> Tente novamente: $erro </p>";
             unset($_SESSION["erro"]);
         }
     }
