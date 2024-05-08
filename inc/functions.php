@@ -108,7 +108,7 @@
             setErro(3); 
         } else {
 
-            $stmt = $conn->prepare("INSERT INTO usuarios(userUsuario, emailUsuario, senhaUsuario) VALUES(:userUsuario, :emailUsuario, :senhaUsuario)");
+            $stmt = $conn->prepare("INSERT INTO usuarios(userUsuario, emailUsuario, senhaUsuario, fotoUsuario) VALUES(:userUsuario, :emailUsuario, :senhaUsuario, 'no-image.png')");
             $stmt->bindParam(':userUsuario', $user, PDO::PARAM_STR);
             $stmt->bindParam(':emailUsuario', $email, PDO::PARAM_STR);
             $stmt->bindParam(':senhaUsuario', $senha, PDO::PARAM_STR);
@@ -119,6 +119,60 @@
             $_SESSION["user"] = $user;
             header("Location: perfil.php");
         }
+    }
+
+    function getInfo($user, $info){
+        $conn = connect();
+        $getInfo = $conn->prepare("SELECT * FROM usuarios WHERE userUsuario = :userUsuario");
+        $getInfo->bindParam('userUsuario', $user, PDO::PARAM_STR);
+        $getInfo->execute();
+        $res = $getInfo->fetchAll(PDO::FETCH_ASSOC);
+        if(!empty($res)){
+            foreach($res as $rows){
+                $nomeUsuario = $rows["userUsuario"];
+                $emailUsuario = $rows["emailUsuario"];
+                $senhaUsuario = $rows["senhaUsuario"];
+                if($info == "user"){
+                    return $nomeUsuario;
+                } else if($info == "email"){
+                    return $emailUsuario;
+                } else if($info == "senha"){
+                    return $senhaUsuario;
+                }
+            }
+        }
+    }
+
+    function getEstacionamentos($user){
+        $conn = connect();
+
+        $getId = $conn->prepare("SELECT * FROM usuarios WHERE userUsuario = :userUsuario");
+        $getId->bindParam(':userUsuario', $user, PDO::PARAM_STR);
+        $getId->execute();
+        $res = $getId->fetchAll(PDO::FETCH_ASSOC);
+        $id = 0;
+        if(!empty($res)){
+            foreach($res as $rows){
+                $id = $rows["idUsuario"];
+            }
+        } else {
+            return;
+        }
+        
+        $stmt = $conn->prepare("SELECT * FROM estacionamentos WHERE idProprietario = :idUsuario");
+
+        $stmt->bindParam(':idUsuario', $id, PDO::PARAM_STR);
+
+        $stmt->execute();
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if(!empty($res)){
+            echo '<div class="perfil-container-card">
+                <i class="fa-solid fa-car fa-2xl"></i>
+            </div>';
+        }
+        echo '<div class="perfil-container-card">
+            <i class="fa-solid fa-car fa-2xl"></i><i class="fa-solid fa-plus fa-xl"></i>
+        </div>';
     }
 
     function setErro($erro){

@@ -7,3 +7,14 @@ function toggleMethod(button){
         document.querySelector('.container-register').style.display = "none";       
     }
 }
+
+function togglePerfil(button){
+    if(button == 0){
+        document.getElementById('perfil-sistema').style.display = "flex";
+        document.getElementById('perfil-editar').style.display = "none";
+
+    } else if(button == 1){
+        document.getElementById('perfil-sistema').style.display = "none";
+        document.getElementById('perfil-editar').style.display = "flex";
+    }
+}
