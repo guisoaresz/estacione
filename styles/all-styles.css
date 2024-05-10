@@ -456,7 +456,33 @@ span {
     background-color: rgb(228, 63, 63);
 }
 
+.perfil-container-modal {
+    background-color: rgba(0, 0, 0, 0.659);
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    position: absolute;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    column-gap: 0;
+    display: none;
+}
 
+.perfil-container-modal-content {
+    background-color: white;
+    box-shadow: 0 0 5px 5px black;
+    width: 30%;
+}
+
+.perfil-container-modal-content-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.perfil-container-modal input {
+    width: 50%;
+}
 
 
 
@@ -538,6 +564,7 @@ footer h3:hover, footer a:hover {
     height: 50px;
     color: red;
     margin-top: 10px;
+    background-color: white;
 }
 
 @media (max-width: 768px) {

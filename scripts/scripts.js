@@ -18,3 +18,12 @@ function togglePerfil(button){
         document.getElementById('perfil-editar').style.display = "flex";
     }
 }
+
+function toggleModal(button){
+    if(button == 0){
+        document.getElementById('perfil-container-modal').style.display = "none";
+    } else if(button == 1){
+        document.getElementById('perfil-container-modal').style.display = "grid";
+    }
+    console.log("1");
+}

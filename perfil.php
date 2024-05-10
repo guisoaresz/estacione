@@ -39,6 +39,17 @@
                         <?php
                             getEstacionamentos($_SESSION["user"]);
                         ?>
+                        <div class="perfil-container-modal" id="perfil-container-modal">
+                            <div class="perfil-container-modal-content">
+                                <div class="perfil-container-modal-content-title">
+                                    <h2>Criar um estacionamento</h2>
+                                    <button onclick=toggleModal(0)>X</button>
+                                </div>
+                                <div class="perfil-container-modal-content-body">
+                                    <input type="text" name="nomeEstacionamento" placeholder="Nome do estacionamento">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <hr>

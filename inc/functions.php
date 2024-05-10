@@ -168,7 +168,7 @@
                 <i class="fa-solid fa-car fa-2xl"></i>
             </div>';
         }
-        echo '<div class="perfil-container-card">
+        echo '<div class="perfil-container-card" onclick="toggleModal(1)">
             <i class="fa-solid fa-car fa-2xl"></i><i class="fa-solid fa-plus fa-xl"></i>
         </div>';
     }
