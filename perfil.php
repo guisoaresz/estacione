@@ -55,10 +55,6 @@
                 </div>
             </div>
             <div class="perfil-container-editar" id="perfil-editar">
-                <div class="perfil-imagem-usuario">
-                    <img src="images/no-image.png" alt="Foto do usuário">
-                    <p>Alterar imagem / Remover imagem</p>
-                </div>
                 <div class="perfil-form-editar">
                     <h1>Suas informações</h1>
                     <hr>
@@ -67,13 +63,17 @@
                             echo '<label for="nome">Nome de usuário</label>';
                             echo '<input type="text" name="nome" value="'. getInfo($_SESSION["user"], "user") .'">';
                             echo '<label for="email">Email</label>';
-                            echo '<input type="text" name="email" value="'. getInfo($_SESSION["user"], "email") .'">';
-                            echo '<label for="senha">Senha</label>';
-                            echo '<input type="text" name="senha" value="'. getInfo($_SESSION["user"], "senha") .'">';             
+                            echo '<input type="text" name="email" value="'. getInfo($_SESSION["user"], "email") .'">';         
                         ?>
-                        <button type="submit">Editar</button>
-                        <button href="perfil.php" id="btnCancelar">Cancelar</button>
+                        <div class="perfil-form-editar-buttons">
+                            <button type="submit">Editar</button>
+                            <button href="perfil.php" id="btnCancelar">Cancelar</button>
+                        </div>
                     </form>
+                </div>
+                <div class="perfil-imagem-usuario">
+                    <img src="images/no-image.png" alt="Foto do usuário">
+                    <p>Alterar imagem / Remover imagem</p>
                 </div>
             </div>
         </div>

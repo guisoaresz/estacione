@@ -62,8 +62,7 @@
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if(!empty($res)){
             foreach($res as $rows){
-                $senhab = $rows["senhaUsuario"];
-                if($senha == $senhab){
+                if(password_verify($senha, $rows["senhaUsuario"])){
                     $_SESSION["user"] = $user;
                     header("Location: perfil.php");
                 } else {
@@ -79,8 +78,7 @@
             $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if(!empty($res)){
                 foreach($res as $rows){
-                    $senhab = $rows["senhaUsuario"];
-                    if($senha == $senhab){                    
+                    if(password_verify($senha, $rows["senhaUsuario"])){          
                         $_SESSION["user"] = $rows["userUsuario"];
                         header("Location: perfil.php");
                     } else {
@@ -105,12 +103,15 @@
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if(!empty($res)){
             header("Location: login.php");
-            setErro(3); 
+            setErro(3);
         } else {
 
             $stmt = $conn->prepare("INSERT INTO usuarios(userUsuario, emailUsuario, senhaUsuario, fotoUsuario) VALUES(:userUsuario, :emailUsuario, :senhaUsuario, 'no-image.png')");
             $stmt->bindParam(':userUsuario', $user, PDO::PARAM_STR);
             $stmt->bindParam(':emailUsuario', $email, PDO::PARAM_STR);
+
+            $senha = password_hash($senha, PASSWORD_DEFAULT);
+
             $stmt->bindParam(':senhaUsuario', $senha, PDO::PARAM_STR);
         
             $stmt->execute();
@@ -131,13 +132,10 @@
             foreach($res as $rows){
                 $nomeUsuario = $rows["userUsuario"];
                 $emailUsuario = $rows["emailUsuario"];
-                $senhaUsuario = $rows["senhaUsuario"];
                 if($info == "user"){
                     return $nomeUsuario;
                 } else if($info == "email"){
                     return $emailUsuario;
-                } else if($info == "senha"){
-                    return $senhaUsuario;
                 }
             }
         }
