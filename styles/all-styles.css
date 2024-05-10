@@ -378,6 +378,7 @@ span {
     flex-direction: column;
     place-content: center;
     place-items: center;
+    border-right: 1px lightslategray solid;
 }
 
 .perfil-form-editar form{
@@ -399,6 +400,11 @@ span {
     flex-grow: 0;
     height: 100%;
     width: 100%;
+}
+
+.perfil-form-editar-buttons {
+    width: 100%;
+    margin-top: 10px;
 }
 
 .perfil-form-editar button, input {

@@ -132,13 +132,10 @@
             foreach($res as $rows){
                 $nomeUsuario = $rows["userUsuario"];
                 $emailUsuario = $rows["emailUsuario"];
-                $senhaUsuario = $rows["senhaUsuario"];
                 if($info == "user"){
                     return $nomeUsuario;
                 } else if($info == "email"){
                     return $emailUsuario;
-                } else if($info == "senha"){
-                    return $senhaUsuario;
                 }
             }
         }
