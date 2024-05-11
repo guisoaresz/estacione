@@ -10,6 +10,10 @@
         header("Location: login.php");
         exit;
     }
+
+    if(isset($_POST["nomeEstacionamento"])){
+        createEstacionamento($_SESSION["user"]);
+    }
     
     echo "<main>";
 ?>
@@ -46,20 +50,13 @@
                                     <button onclick=toggleModal(0)><i class="fa-solid fa-xmark"></i></button>
                                 </div>
                                 <div class="perfil-container-modal-content-body">
-                                    <form action="" method="post">
+                                    <form method="post">
                                         <label for="nomeEstacionamento">Nome do estacionamento</label>
                                         <input type="text" name="nomeEstacionamento" placeholder="eStacionamento" required>
 
                                         <label for="qtdVagasEstacionamento">Quantidade de vagas</label>
                                         <input type="number" name="qtdVagasEstacionamento" placeholder="30" min="1" required>
 
-                                        <label for="tiposVagas">Tipos de vagas</label>
-                                        <select name="tiposVagasEstacionamento">
-                                            <option value="onlycars" selected>Apenas carros</option>
-                                            <option value="onlymotos">Apenas motos</option>
-                                            <option value="onlybigcars">Apenas carros pesados</option>
-                                            <option value="all">Todos os tipos</option>
-                                        </select>
                                         <div class="perfil-container-modal-content-body-buttons">
                                             <button type="submit">Criar</button>
                                             <button id="btnCancelar" onclick=toggleModal(0)>Cancelar</button>

@@ -494,6 +494,11 @@ span {
     font-weight: bold;
 }
 
+.perfil-container-modal-content-title i:hover{
+    font-weight: bold;
+    color: darkgreen;
+}
+
 .perfil-container-modal-content-body {
     display: flex;
     flex-direction: column;

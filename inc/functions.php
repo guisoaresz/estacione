@@ -141,7 +141,7 @@
         }
     }
 
-    function getEstacionamentos($user){
+    function getId($user){
         $conn = connect();
 
         $getId = $conn->prepare("SELECT * FROM usuarios WHERE userUsuario = :userUsuario");
@@ -151,11 +151,35 @@
         $id = 0;
         if(!empty($res)){
             foreach($res as $rows){
-                $id = $rows["idUsuario"];
+                return $rows["idUsuario"];
             }
         } else {
-            return;
+            return 0;
+        }        
+    }
+
+    function createEstacionamento($user){
+        $nome = $_POST["nomeEstacionamento"];
+        $vagas = $_POST["qtdVagasEstacionamento"];
+
+        if(!empty($nome)){
+            $id = getId($user);
+
+            $conn = connect();
+            $stmt = $conn->prepare("INSERT INTO estacionamentos(nomeEstacionamento, vagasEstacionamento, idProprietario) VALUES(:nomeEstacionamento, :vagasEstacionamento, $id)");
+            $stmt->bindParam(':nomeEstacionamento', $nome, PDO::PARAM_STR);
+            $stmt->bindParam(':vagasEstacionamento', $vagas, PDO::PARAM_INT);
+
+            $stmt->execute();
+
+            header("Location: perfil.php");
         }
+    }
+
+    function getEstacionamentos($user){
+        $conn = connect();
+
+        $id = getId($user);
         
         $stmt = $conn->prepare("SELECT * FROM estacionamentos WHERE idProprietario = :idUsuario");
 
@@ -164,9 +188,11 @@
         $stmt->execute();
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if(!empty($res)){
-            echo '<div class="perfil-container-card">
-                <i class="fa-solid fa-car fa-2xl"></i>
-            </div>';
+            foreach($res as $rows){
+                echo '<div class="perfil-container-card">
+                    <i class="fa-solid fa-car fa-2xl"></i>
+                </div>';
+            }
         }
         echo '<div class="perfil-container-card" onclick="toggleModal(1)">
             <i class="fa-solid fa-car fa-2xl"></i><i class="fa-solid fa-plus fa-xl"></i>
