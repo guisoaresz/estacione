@@ -27,9 +27,6 @@
                     <li>
                         <a href="index.php">Home</a>
                     </li>
-                    <li>
-                        <a href="#">Tutorial</a>
-                    </li>
                 </ul>
             </div>';
             if(isset($_SESSION["user"])){
