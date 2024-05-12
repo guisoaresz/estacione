@@ -9,7 +9,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="'. BASE .'styles/all-styles.css">
             <script src="https://kit.fontawesome.com/e1aca6f76d.js" crossorigin="anonymous"></script>
-            <script src="scripts/scripts.js"></script>
+            <script src="'.BASE.'scripts/scripts.js"></script>
             <title>eStacione</title>
         </head>
         ';

@@ -216,17 +216,42 @@
                     return $nomees;
                 } else if($info == "vagas"){
                     return $vagases;
+                } else if($info == "vagasDisponiveis"){
+                    $getVagasOcup = $conn->prepare("SELECT * from vagas WHERE idEstacionamento = :id");
+                    $getVagasOcup->bindParam('id', $id, PDO::PARAM_INT);
+                    $getVagasOcup->execute();
+                    
+                    if(!empty($getVagasOcup)){
+                        $vagasOcup = $vagases - $getVagasOcup->rowCount();
+                        return $vagasOcup;
+                    } else {
+                        return $getVagasTotal;
+                    }
                 }
             }
+        } else {
+            return "Não encontrado.";
         }
     }
 
-    function getEstacionamentoProp(){
-
+    function getVagasCards($id){
+        $qtdVagas = getEstacionamentoInfo($id, "vagas");
+        echo '<div class="sistema-container-vagas">';
+        for($i = 1; $i <= 5; $i++){
+            echo '
+                <div class="sistema-container-vaga" onclick="toggleVagaModal(1)">
+                    '.$i.'
+                </div>';
+        }
+        echo '</div>
+        </div>';      
     }
 
-    function getEstacionamentoFunc(){
-
+    function getVagaStatus($id, $vaga){
+        $conn = connect();
+        $getVagaStts = $conn->prepare("SELECT * from vagas WHERE idEstacionamento = :id");
+        $getVagaStts->bindParam('id', $id, PDO::PARAM_INT);
+        $getVagaStts->execute();
     }
 
     function setErro($erro){

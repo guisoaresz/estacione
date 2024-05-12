@@ -459,7 +459,7 @@ span {
     background-color: rgb(228, 63, 63);
 }
 
-.perfil-container-modal {
+.perfil-container-modal, .sistema-container-modal {
     background-color: rgba(0, 0, 0, 0.659);
     width: 100%;
     height: 100vh;
@@ -472,37 +472,37 @@ span {
     display: none;
 }
 
-.perfil-container-modal-content {
+.perfil-container-modal-content, .sistema-container-modal-content {
     background-color: white;
     box-shadow: 0 0 5px 5px black;
     width: fit-content;
-    padding: 20px;
+    padding: 10px;
     border-radius: 0.5rem;
 }
 
-.perfil-container-modal-content-title {
+.perfil-container-modal-content-title, .sistema-container-modal-content-title {
     display: flex;
     gap: 30px;
     color: darkgreen;
 }
 
-.perfil-container-modal-content-title button{
+.perfil-container-modal-content-title button, .sistema-container-modal-content-title button {
     border: none;
     background-color: transparent;
 }
 
-.perfil-container-modal-content-title i {
+.perfil-container-modal-content-title i, .sistema-container-modal-content-title i {
     font-size: 30px;
     color: rgba(0, 0, 0, 0.638);
     font-weight: bold;
 }
 
-.perfil-container-modal-content-title i:hover{
+.perfil-container-modal-content-title i:hover, .sistema-container-modal-content-title i:hover {
     font-weight: bold;
     color: darkgreen;
 }
 
-.perfil-container-modal-content-body {
+.perfil-container-modal-content-body, .sistema-container-modal-content-body {
     display: flex;
     flex-direction: column;
     place-content: center;
@@ -510,7 +510,7 @@ span {
     width: 100%;
 }
 
-.perfil-container-modal-content-body form {
+.perfil-container-modal-content-body form, .sistema-container-modal-content-body form {
     display: flex;
     flex-direction: column;
     place-content: center;
@@ -519,19 +519,19 @@ span {
     padding: 10px;
 }
 
-.perfil-container-modal-content-body-buttons {
+.perfil-container-modal-content-body-buttons, .sistema-container-modal-content-body-buttons{
     width: 80%;
     display: flex;
     gap: 5px;
 }
 
-.perfil-container-modal-content-body label {
+.perfil-container-modal-content-body label, .sistema-container-modal-content-body label {
     font-weight: bold;
     text-align: start;
     width: 80%;
 }
 
-.perfil-container-modal-content-body input, select {
+.perfil-container-modal-content-body input, .sistema-container-modal-content-body input {
     width: 80%;
     height: 30px;
     padding-inline-start: 3%;
@@ -539,7 +539,7 @@ span {
     border-radius: 0.25rem;
 }
 
-.perfil-container-modal-content-body form button {
+.perfil-container-modal-content-body form button, .sistema-container-modal-content-body form button {
     margin-top: 15px;
     width: 100%;
     height: 30px;
@@ -558,6 +558,11 @@ span {
     padding: 20px;
 }
 
+.sistema-container h2 {
+    margin: 10px 0;
+    color: darkgreen;
+}
+
 .sistema-container-title {
     width: 100%;
     margin: 30px 0;
@@ -569,8 +574,25 @@ span {
     margin-bottom: 30px;
 }
 
+.sistema-container-vagas {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    margin: 10px 0;
+}
 
-
+.sistema-container-vaga {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    border: 1px solid black;
+    background-color: lightgrey;
+    font-weight: bold;
+    width: 30px;
+    height: 60px;
+    padding: 20px;
+    border-radius: 0.1rem;
+}
 
 
 

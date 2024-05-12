@@ -25,5 +25,12 @@ function toggleModal(button){
     } else if(button == 1){
         document.getElementById('perfil-container-modal').style.display = "grid";
     }
-    console.log("1");
+}
+
+function toggleVagaModal(button) {
+    if(button == 0){
+        document.getElementById('sistema-container-modal').style.display = "none";
+    } else if(button == 1){
+        document.getElementById('sistema-container-modal').style.display = "grid";
+    }
 }
