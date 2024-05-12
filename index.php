@@ -3,6 +3,7 @@
     include ('inc/templates.php');
     headerStructure();
 ?>
+<main>
     <body>
         <?php
             headerTemp();

@@ -351,13 +351,16 @@ span {
 
 .perfil-container-card {
     display: flex;
-    background-color: lightgray;
     place-content: center;
     place-items: center;
+    text-decoration: none;
+    background-color: lightgray;
+    height: 100px;
     width: 200px;
     padding: 5%;
     border-radius: 1em;
-    margin: 15px
+    margin: 15px;
+    cursor: pointer;
 }
 
 .perfil-container-sistema-proprietario i, .perfil-container-sistema-funcionario i {
@@ -545,6 +548,34 @@ span {
     background-color: seagreen;
     border-style: none;
 }
+
+.sistema-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+}
+
+.sistema-container-title {
+    width: 100%;
+    margin: 30px 0;
+}
+
+.sistema-container-title a {
+    color: black;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
 
 
 

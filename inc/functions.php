@@ -1,6 +1,8 @@
 <?php
     include "inc/conexao.php";
 
+    define('BASE', "///localhost/estacione/");
+
     function checkStatus(){
         if(!isset($_SESSION["user"])){
             header("Location: login.php");
@@ -189,14 +191,42 @@
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if(!empty($res)){
             foreach($res as $rows){
-                echo '<div class="perfil-container-card">
-                    <i class="fa-solid fa-car fa-2xl"></i>
-                </div>';
+                $idEs = $rows["idEstacionamento"];
+                echo '<a href="sistema.php/?id='.$idEs.'" class="perfil-container-card">
+                    <i class="fa-solid fa-car fa-2xl"></i></a>
+                </a>';
             }
         }
         echo '<div class="perfil-container-card" onclick="toggleModal(1)">
             <i class="fa-solid fa-car fa-2xl"></i><i class="fa-solid fa-plus fa-xl"></i>
         </div>';
+    }
+
+    function getEstacionamentoInfo($id, $info){
+        $conn = connect();
+        $getInfo = $conn->prepare("SELECT * FROM estacionamentos WHERE idEstacionamento = :idEstacionamento");
+        $getInfo->bindParam('idEstacionamento', $id, PDO::PARAM_STR);
+        $getInfo->execute();
+        $res = $getInfo->fetchAll(PDO::FETCH_ASSOC);
+        if(!empty($res)){
+            foreach($res as $rows){
+                $nomees = $rows["nomeEstacionamento"];
+                $vagases = $rows["vagasEstacionamento"];
+                if($info == "nome"){
+                    return $nomees;
+                } else if($info == "vagas"){
+                    return $vagases;
+                }
+            }
+        }
+    }
+
+    function getEstacionamentoProp(){
+
+    }
+
+    function getEstacionamentoFunc(){
+
     }
 
     function setErro($erro){

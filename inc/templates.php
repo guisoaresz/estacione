@@ -7,7 +7,7 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="styles/all-styles.css">
+            <link rel="stylesheet" href="'. BASE .'styles/all-styles.css">
             <script src="https://kit.fontawesome.com/e1aca6f76d.js" crossorigin="anonymous"></script>
             <script src="scripts/scripts.js"></script>
             <title>eStacione</title>
@@ -25,15 +25,15 @@
                 <h1>eStacione</h1>
                 <ul>
                     <li>
-                        <a href="index.php">Home</a>
+                        <a href="'. BASE .'index.php">Home</a>
                     </li>
                 </ul>
             </div>';
             if(isset($_SESSION["user"])){
-                echo '<div class="header-right"><a href="perfil.php">Perfil<i class="fa-solid fa-user"></i></a>
+                echo '<div class="header-right"><a href="'. BASE .'perfil.php">Perfil<i class="fa-solid fa-user"></i></a>
                 </div>';
             } else {
-                echo'<div class="header-right"><a href="login.php">Login<i class="fa-solid fa-user"></i></a>
+                echo'<div class="header-right"><a href="'. BASE .'login.php">Login<i class="fa-solid fa-user"></i></a>
                 </div>';
             }
         echo '</header>';

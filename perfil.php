@@ -14,9 +14,8 @@
     if(isset($_POST["nomeEstacionamento"])){
         createEstacionamento($_SESSION["user"]);
     }
-    
-    echo "<main>";
 ?>
+<main>
     <div class="perfil-container">
         <div class="perfil-container-left">
             <div class="perfil-container-opc">
