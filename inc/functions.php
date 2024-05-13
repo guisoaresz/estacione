@@ -237,7 +237,8 @@
     function getVagasCards($id){
         $qtdVagas = getEstacionamentoInfo($id, "vagas");
         echo '<div class="sistema-container-vagas">';
-        for($i = 1; $i <= 5; $i++){
+        for($i = 1; $i <= $qtdVagas; $i++){
+            $stts = getVagaStatus($id, $i);
             echo '
                 <div class="sistema-container-vaga" onclick="toggleVagaModal(1)">
                     '.$i.'
