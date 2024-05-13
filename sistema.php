@@ -13,8 +13,6 @@
             <h1><?php echo getEstacionamentoInfo($_GET["id"], "nome")?></h1>
         </div>
         <div class="sistema-container-info">
-            <h2>Localidade</h2>
-            <p>Rua Lorem Ipsum, 123. Jardim São Paulo</p>
             <h2>Vagas</h2>
             <p>Total: <?php echo getEstacionamentoInfo($_GET["id"], "vagas")?> vagas</p>
             <p>Vagas disponíveis: <?php echo getEstacionamentoInfo($_GET["id"], "vagasDisponiveis")?> vagas</p>
@@ -30,7 +28,10 @@
                 <div class="sistema-container-modal-content-body">
                     <form method="post">
                         <label for="qtdVagasEstacionamento">Estado da vaga</label>
-                        <input type="range" id="volume" name="volume" min="0" max="100" value="50" required>
+                        <div class="sistema-container-modal-status">
+                            <input type="checkbox" name="statusVaga" id="statusVaga">
+                            <label for="statusVaga">Indisponível</label>
+                        </div>
 
                         <div class="sistema-container-modal-content-body-buttons">
                             <button type="submit">Atualizar</button>

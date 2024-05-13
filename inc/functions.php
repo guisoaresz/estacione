@@ -180,24 +180,22 @@
 
     function getEstacionamentos($user){
         $conn = connect();
-
         $id = getId($user);
         
         $stmt = $conn->prepare("SELECT * FROM estacionamentos WHERE idProprietario = :idUsuario");
-
         $stmt->bindParam(':idUsuario', $id, PDO::PARAM_STR);
-
         $stmt->execute();
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         if(!empty($res)){
             foreach($res as $rows){
                 $idEs = $rows["idEstacionamento"];
-                echo '<a href="sistema.php/?id='.$idEs.'" class="perfil-container-card">
-                    <i class="fa-solid fa-car fa-2xl"></i></a>
+                echo '<a href="sistema.php/?id='.$idEs.'" class="perfil-container-card">'.
+                    getEstacionamentoInfo($idEs, "nome").'
                 </a>';
             }
         }
-        echo '<div class="perfil-container-card" onclick="toggleModal(1)">
+        echo '<div class="perfil-container-card-create" onclick="toggleModal(1)">
             <i class="fa-solid fa-car fa-2xl"></i><i class="fa-solid fa-plus fa-xl"></i>
         </div>';
     }
@@ -239,10 +237,17 @@
         echo '<div class="sistema-container-vagas">';
         for($i = 1; $i <= $qtdVagas; $i++){
             $stts = getVagaStatus($id, $i);
+            if($stts){
             echo '
-                <div class="sistema-container-vaga" onclick="toggleVagaModal(1)">
+                <div class="sistema-container-vaga-desocupada" onclick="toggleVagaModal(1)">
                     '.$i.'
                 </div>';
+            } else {
+            echo '
+                <div class="sistema-container-vaga-ocupada" onclick="toggleVagaModal(1)">
+                    '.$i.'
+                </div>';
+            }
         }
         echo '</div>
         </div>';      
@@ -253,6 +258,22 @@
         $getVagaStts = $conn->prepare("SELECT * from vagas WHERE idEstacionamento = :id");
         $getVagaStts->bindParam('id', $id, PDO::PARAM_INT);
         $getVagaStts->execute();
+        $res = $getVagaStts->fetchAll(PDO::FETCH_ASSOC);
+        if(!empty($res)){
+            foreach ($res as $vagas) {
+                if ($vagas['numeroVaga'] == $vaga) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        } else {
+            return true;
+        }
+    }
+
+    function toggleVagaStatus($id, $vaga){
+
     }
 
     function setErro($erro){
