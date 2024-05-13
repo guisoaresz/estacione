@@ -5,14 +5,14 @@
 
     function checkStatus(){
         if(!isset($_SESSION["user"])){
-            header("Location: login.php");
+            header("Location: ".BASE."login.php");
         }
     }
 
     function deslogarUsuario(){
         if(isset($_POST["deslogarUsuario"])){
             session_destroy();
-            header("Location: login.php");
+            header("Location: ".BASE."login.php");
             exit;
         }
     }
