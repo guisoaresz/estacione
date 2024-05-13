@@ -30,9 +30,9 @@
                 <div class="sistema-container-modal-content-body">
                     <form method="post">
                         <label for="qtdVagasEstacionamento">Estado da vaga</label>
-                        <div class="sistema-container-modal-status">
-                            <input type="checkbox" name="statusVaga" id="statusVaga">
-                            <label for="statusVaga">Indisponível</label>
+                        <div class="switch">
+                            <input type="checkbox" name="switch" id="switch">
+                            <label for="switch"></label>
                         </div>
 
                         <div class="sistema-container-modal-content-body-buttons">
