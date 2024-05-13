@@ -10,6 +10,7 @@
             <link rel="stylesheet" href="'. BASE .'styles/all-styles.css">
             <script src="https://kit.fontawesome.com/e1aca6f76d.js" crossorigin="anonymous"></script>
             <script src="'.BASE.'scripts/scripts.js"></script>
+            <link rel="shortcut icon" href="'.BASE.'images/logo.png" type="image/x-icon">
             <title>eStacione</title>
         </head>
         ';

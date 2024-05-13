@@ -592,6 +592,7 @@ span {
     height: 60px;
     padding: 20px;
     border-radius: 0.1rem;
+    cursor: pointer;
 }
 
 
