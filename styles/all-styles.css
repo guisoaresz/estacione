@@ -581,13 +581,16 @@ span {
     padding: 20px;
 }
 
+.sistema-container-info-vagas {
+    margin: 20px 0;
+}
+
 .sistema-container h2 {
     color: darkgreen;
 }
 
 .sistema-container-title {
     width: 100%;
-    margin: 10px 0;
 }
 
 .sistema-container-title a {

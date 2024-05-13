@@ -13,9 +13,11 @@
             <h1><?php echo getEstacionamentoInfo($_GET["id"], "nome")?></h1>
         </div>
         <div class="sistema-container-info">
-            <h2>Vagas</h2>
-            <p>Total: <?php echo getEstacionamentoInfo($_GET["id"], "vagas")?> vagas</p>
-            <p>Vagas disponíveis: <?php echo getEstacionamentoInfo($_GET["id"], "vagasDisponiveis")?> vagas</p>
+            <div class="sistema-container-info-vagas">
+                <h2>Vagas</h2>
+                <p>Total: <?php echo getEstacionamentoInfo($_GET["id"], "vagas")?> vagas</p>
+                <p>Vagas disponíveis: <?php echo getEstacionamentoInfo($_GET["id"], "vagasDisponiveis")?> vagas</p>
+            </div>
             <h2>Gerenciar vagas</h2>
         </div>
         <?php getVagasCards($_GET["id"])?>
