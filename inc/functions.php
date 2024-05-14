@@ -237,14 +237,14 @@
         echo '<div class="sistema-container-vagas">';
         for($i = 1; $i <= $qtdVagas; $i++){
             $stts = getVagaStatus($id, $i);
-            if($stts == 0){
+            if($stts == 1){
                 echo '
-                <div class="sistema-container-vaga-desocupada" onclick="toggleVagaModal(1)">
+                <div class="sistema-container-vaga-ocupada" id="'.$i.'" onclick="toggleVagaModal('.$i.')">
                     '.$i.'
                 </div>';
             } else {
                 echo '
-                <div class="sistema-container-vaga-ocupada" onclick="toggleVagaModal(1)">
+                <div class="sistema-container-vaga-desocupada" id="'.$i.'" onclick="toggleVagaModal('.$i.')">
                     '.$i.'
                 </div>';
             }
@@ -263,17 +263,19 @@
             foreach ($res as $vagas) {
                 if ($vagas['numeroVaga'] == $vaga) {
                     return 1;
-                } else {
-                    return 0;
                 }
             }
-        } else {
-            return 0;
         }
     }
 
-    function toggleVagaStatus($id, $vaga){
+    function toggleVagaStatus($id, $vaga, $status){
+        $conn = connect();
+        $status = getVagaStatus($id, $vaga);
+        if($status == 1){
+                 
+        } else {
 
+        }
     }
 
     function setErro($erro){

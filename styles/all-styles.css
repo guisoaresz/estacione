@@ -633,9 +633,10 @@ span {
 
 .sistema-container-vagas {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 3px;
-    margin: 10px 0;
+    width: 55%;
 }
 
 .sistema-container-vaga-ocupada, .sistema-container-vaga-desocupada {

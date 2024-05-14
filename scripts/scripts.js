@@ -30,7 +30,9 @@ function toggleModal(button){
 function toggleVagaModal(button) {
     if(button == 0){
         document.getElementById('sistema-container-modal').style.display = "none";
-    } else if(button == 1){
+    } else if(button >= 1){
         document.getElementById('sistema-container-modal').style.display = "grid";
+        document.getElementById('sistema-modal-title').innerHTML = "Gerenciar vaga #" + button;
+        document.getElementById('numeroVaga').value = button;
     }
 }

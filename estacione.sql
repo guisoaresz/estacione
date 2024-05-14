@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12/05/2024 às 22:20
+-- Tempo de geração: 14/05/2024 às 05:02
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -39,7 +39,8 @@ CREATE TABLE `estacionamentos` (
 --
 
 INSERT INTO `estacionamentos` (`idEstacionamento`, `nomeEstacionamento`, `vagasEstacionamento`, `idProprietario`) VALUES
-(1, 'Estacionamento do Pedro', 10, 1);
+(1, 'Estacionamento do Pedro', 10, 1),
+(3, 'Diego\'s Park', 65, 1);
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,9 @@ CREATE TABLE `vagas` (
 --
 
 INSERT INTO `vagas` (`idVaga`, `numeroVaga`, `idEstacionamento`) VALUES
-(1, 12, 1);
+(1, 7, 1),
+(2, 8, 1),
+(3, 6, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -111,7 +114,7 @@ ALTER TABLE `vagas`
 -- AUTO_INCREMENT de tabela `estacionamentos`
 --
 ALTER TABLE `estacionamentos`
-  MODIFY `idEstacionamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idEstacionamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
@@ -123,7 +126,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `vagas`
 --
 ALTER TABLE `vagas`
-  MODIFY `idVaga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idVaga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
