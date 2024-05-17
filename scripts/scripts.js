@@ -32,7 +32,21 @@ function toggleVagaModal(button) {
         document.getElementById('sistema-container-modal').style.display = "none";
     } else if(button >= 1){
         document.getElementById('sistema-container-modal').style.display = "grid";
-        document.getElementById('sistema-modal-title').innerHTML = "Gerenciar vaga #" + button;
+        document.getElementById('sistema-modal-title-toggleVaga').innerHTML = "Gerenciar vaga #" + button;
         document.getElementById('numeroVaga').value = button;
+    }
+}
+
+function toggleSistemaModal(button){
+    if(button == 0){
+        document.getElementById('sistema-container-modal-alterName').style.display = "grid";
+    } else if(button == 1){
+        document.getElementById('sistema-container-modal-alterVagas').style.display = "grid";
+    } else if(button == 2){
+        document.getElementById('sistema-container-modal-excluir').style.display = "grid";
+    } else {
+        document.getElementById('sistema-container-modal-alterName').style.display = "none";
+        document.getElementById('sistema-container-modal-alterVagas').style.display = "none";
+        document.getElementById('sistema-container-modal-excluir').style.display = "none";
     }
 }

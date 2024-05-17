@@ -232,6 +232,29 @@
         }
     }
 
+    function setEstacionamentoInfo($id, $tipoInfo, $info){
+        $conn = connect();
+        if($tipoInfo == "nome"){
+            $setInfo = $conn->prepare("UPDATE estacionamentos SET nomeEstacionamento = :novoNome WHERE idEstacionamento = :id");
+            $setInfo->bindParam('novoNome', $info, PDO::PARAM_STR);
+            $setInfo->bindParam('id', $id, PDO::PARAM_STR);
+            $setInfo->execute();
+        } else if($tipoInfo == "vagas"){
+            $setInfo = $conn->prepare("UPDATE estacionamentos SET vagasEstacionamento = :qtdVagas WHERE idEstacionamento = :id");
+            $setInfo->bindParam('qtdVagas', $info, PDO::PARAM_STR);
+            $setInfo->bindParam('id', $id, PDO::PARAM_STR);
+            $setInfo->execute();            
+        }
+    }
+
+    function deleteEstacionamento($id){
+        $conn = connect();
+        $setInfo = $conn->prepare("DELETE FROM estacionamentos WHERE idEstacionamento = :id");
+        $setInfo->bindParam('id', $id, PDO::PARAM_STR);
+        $setInfo->execute();
+        header("Location: ". BASE . "perfil.php");
+    }
+
     function getVagasCards($id){
         $qtdVagas = getEstacionamentoInfo($id, "vagas");
         echo '<div class="sistema-container-vagas">';
@@ -256,7 +279,7 @@
     function getVagaStatus($id, $vaga){
         $conn = connect();
         $getVagaStts = $conn->prepare("SELECT * from vagas WHERE idEstacionamento = :id");
-        $getVagaStts->bindParam('id', $id, PDO::PARAM_INT);
+        $getVagaStts->bindParam(':id', $id, PDO::PARAM_INT);
         $getVagaStts->execute();
         $res = $getVagaStts->fetchAll(PDO::FETCH_ASSOC);
         if(!empty($res)){
@@ -268,13 +291,19 @@
         }
     }
 
-    function toggleVagaStatus($id, $vaga, $status){
-        $conn = connect();
-        $status = getVagaStatus($id, $vaga);
-        if($status == 1){
-                 
-        } else {
+    function toggleVagaStatus($id, $vaga){
+        $status = $_POST["vagaStatus"];
 
+        $conn = connect();
+        if($status == "disponivel"){
+            $setVagaStts = $conn->prepare("DELETE from vagas WHERE numeroVaga = :numeroVaga");
+            $setVagaStts->bindParam(':numeroVaga', $vaga, PDO::PARAM_INT);
+            $setVagaStts->execute();
+        } else {
+            $setVagaStts = $conn->prepare("INSERT INTO vagas (numeroVaga, idEstacionamento) VALUES (:numeroVaga, :idEstacionamento)");
+            $setVagaStts->bindParam(':numeroVaga', $vaga, PDO::PARAM_INT);
+            $setVagaStts->bindParam(':idEstacionamento', $id, PDO::PARAM_INT);
+            $setVagaStts->execute();
         }
     }
 

@@ -366,7 +366,7 @@ span {
 
 .perfil-container-card {
     flex-direction: column;
-    color: black;
+    color: green;
     font-weight: bold;
 }
 
@@ -483,10 +483,17 @@ span {
     display: none;
 }
 
+.perfil-container-modal-content {
+    width: fit-content;
+}
+
+.sistema-container-modal-content {
+    width: 30%;
+}
+
 .perfil-container-modal-content, .sistema-container-modal-content {
     background-color: white;
     box-shadow: 0 0 5px 5px black;
-    width: fit-content;
     padding: 10px;
     border-radius: 0.5rem;
 }
@@ -533,6 +540,7 @@ span {
 .perfil-container-modal-content-body-buttons, .sistema-container-modal-content-body-buttons{
     width: 80%;
     display: flex;
+    flex-direction: row;
     gap: 5px;
 }
 
@@ -560,48 +568,10 @@ span {
     border-style: none;
 }
 
-.switch {
+.sistema-container-modal #alert {
     display: flex;
-    place-items: center;
+    flex-wrap: wrap;
     width: 80%;
-}
-
-.switch input {
-    display: none;
-}
-
-.switch label {
-    display: flex;
-    align-items: center;
-    position: relative;
-    background-color: #d5d5d5;
-    border: 3px solid #dfdfdf;
-    width: 56px;
-    height: 30px;
-    border-radius: 30px;
-    padding: 2px;
-    cursor: pointer;
-    transition: background-color .2s;
-}
-
-.switch label::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 1px;
-    width: 28px;
-    height: 28px;
-    background-color: #fff;
-    border-radius: 50%;
-    transition: left .2s;
-}
-
-.switch input:checked+label {
-    background-color: #00ff6a;
-}
-
-.switch input:checked+label::after {
-    left: calc(100% - 27px);
 }
 
 .sistema-container {
@@ -614,7 +584,7 @@ span {
     padding: 20px;
 }
 
-.sistema-container-info-vagas {
+.sistema-container-info-vagas, .sistema-container-gerenciar {
     margin: 20px 0;
 }
 
@@ -662,13 +632,28 @@ span {
     background-color: rgb(174, 207, 174);
 }
 
+.vagaStatus {
+    width: 80%;
+}
 
+#vagaStatus {
+    padding: 3px;
+    width: 50%;
+}
 
+.alterarNome, .alterarQtdVagas, .excluirEstacionamento {
+    width: fit-content; 
+}
 
+.sistema-container-gerenciar p {
+    text-decoration: underline;
+    width: fit-content;
+}
 
-
-
-
+.sistema-container-gerenciar p:hover {
+    color: green;
+    cursor: pointer;
+}
 
 
 
