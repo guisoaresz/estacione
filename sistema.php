@@ -35,7 +35,7 @@
                         <label for="qtdVagasEstacionamento">Estado da vaga</label>
                         <input type="text" name="numeroVaga" id="numeroVaga" hidden>
                         <div class="switch">
-                            <input type="checkbox" name="switch" id="switch">
+                            <input type="checkbox" name="switch" id="switch" >
                             <label for="switch"></label>
                         </div>
 
