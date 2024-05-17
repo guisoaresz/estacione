@@ -54,7 +54,7 @@
                                         <input type="text" name="nomeEstacionamento" placeholder="eStacionamento" required>
 
                                         <label for="qtdVagasEstacionamento">Quantidade de vagas</label>
-                                        <input type="number" name="qtdVagasEstacionamento" placeholder="30" min="1" required>
+                                        <input type="number" name="qtdVagasEstacionamento" placeholder="30" min="1" max="150" required>
 
                                         <div class="perfil-container-modal-content-body-buttons">
                                             <button type="submit">Criar</button>

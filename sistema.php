@@ -118,7 +118,7 @@
                 <div class="sistema-container-modal-content-body">
                     <form method="post">
                         <label for="qtdVagasEstacionamento">Quantidade de vagas</label>
-                        <input type="number" name="novoNumero" placeholder="30" min="1" required>
+                        <input type="number" name="novoNumero" placeholder="30" min="1" max="150" required>
 
                         <div class="sistema-container-modal-content-body-buttons">
                             <button type="submit">Alterar</button>
