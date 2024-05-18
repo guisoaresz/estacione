@@ -584,7 +584,13 @@ span {
     padding: 20px;
 }
 
-.sistema-container-info-vagas, .sistema-container-gerenciar {
+.sistema-container-info-funcionarios {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sistema-container-vagas, .sistema-container-gerenciar, .sistema-container-funcionarios {
     margin: 20px 0;
 }
 
@@ -602,7 +608,7 @@ span {
     margin-bottom: 10px;
 }
 
-.sistema-container-vagas {
+.sistema-container-vagas-cards {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -645,12 +651,12 @@ span {
     width: fit-content; 
 }
 
-.sistema-container-gerenciar p {
+.sistema-container-gerenciar p, .sistema-container-funcionarios .criarCodigo p, .listarFuncionarios p {
     text-decoration: underline;
     width: fit-content;
 }
 
-.sistema-container-gerenciar p:hover {
+.sistema-container-gerenciar p:hover, .sistema-container-funcionarios .criarCodigo p:hover, .listarFuncionarios p:hover{
     color: green;
     cursor: pointer;
 }

@@ -38,15 +38,18 @@ function toggleVagaModal(button) {
 }
 
 function toggleSistemaModal(button){
-    if(button == 0){
-        document.getElementById('sistema-container-modal-alterName').style.display = "grid";
-    } else if(button == 1){
-        document.getElementById('sistema-container-modal-alterVagas').style.display = "grid";
-    } else if(button == 2){
-        document.getElementById('sistema-container-modal-excluir').style.display = "grid";
-    } else {
+    if(button == 0) {
         document.getElementById('sistema-container-modal-alterName').style.display = "none";
         document.getElementById('sistema-container-modal-alterVagas').style.display = "none";
         document.getElementById('sistema-container-modal-excluir').style.display = "none";
+        document.getElementById('sistema-container-modal-gerarCodigo').style.display = "none"; 
+    } else if(button == 1) {
+        document.getElementById('sistema-container-modal-alterName').style.display = "grid";
+    } else if(button == 2) {
+        document.getElementById('sistema-container-modal-alterVagas').style.display = "grid";
+    } else if(button == 3) {
+        document.getElementById('sistema-container-modal-excluir').style.display = "grid";
+    } else if(button == 4) {
+        document.getElementById('sistema-container-modal-gerarCodigo').style.display = "grid";
     }
 }

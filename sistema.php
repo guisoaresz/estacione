@@ -41,22 +41,34 @@
             <h1><?php echo getEstacionamentoInfo($_GET["id"], "nome")?></h1>
         </div>
         <div class="sistema-container-info">
-            <div class="sistema-container-info-vagas">
-                <h2>Vagas</h2>
-                <p>Total: <?php echo getEstacionamentoInfo($_GET["id"], "vagas")?> vagas</p>
-                <p>Vagas disponíveis: <?php echo getEstacionamentoInfo($_GET["id"], "vagasDisponiveis")?> vagas</p>
+            <div class="sistema-container-info-funcionarios">
+                <div class="sistema-container-vagas">
+                    <h2>Vagas</h2>
+                    <p>Total: <?php echo getEstacionamentoInfo($_GET["id"], "vagas")?> vaga(s)</p>
+                    <p>Vagas disponíveis: <?php echo getEstacionamentoInfo($_GET["id"], "vagasDisponiveis")?> vaga(s)</p>
+                </div>
+                <div class="sistema-container-funcionarios">
+                    <h2>Funcionários</h2>
+                    <p>Total de Funcionários: <?php echo getEstacionamentoFuncionarios($_GET["id"])?> funcionário(s)</p>
+                    <div class="listarFuncionarios">
+                        <p>Listar funcionários</p>
+                    </div>
+                    <div class="criarCodigo" onclick=toggleSistemaModal(4)>
+                        <p>Criar um código</p>
+                    </div>
+                </div>
             </div>
             <h2>Gerenciar vagas</h2>
             <?php getVagasCards($_GET["id"])?>
             <div class="sistema-container-gerenciar">
                 <h2>Gerenciar estacionamento</h2>
-                <div class="alterarNome" onclick=toggleSistemaModal(0)>
+                <div class="alterarNome" onclick=toggleSistemaModal(1)>
                     <p>Alterar nome</p>
                 </div>
-                <div class="alterarQtdVagas" onclick=toggleSistemaModal(1)>
+                <div class="alterarQtdVagas" onclick=toggleSistemaModal(2)>
                     <p>Alterar quantidade de vagas</p>
                 </div>
-                <div class="excluirEstacionamento" onclick=toggleSistemaModal(2)>
+                <div class="excluirEstacionamento" onclick=toggleSistemaModal(3)>
                     <p>Excluir estacionamento</p>
                 </div>
             </div>
@@ -101,7 +113,7 @@
 
                         <div class="sistema-container-modal-content-body-buttons">
                             <button type="submit">Alterar</button>
-                            <button id="btnCancelar" type="button" onclick=toggleSistemaModal(3)>Cancelar</button>
+                            <button id="btnCancelar" type="button" onclick=toggleSistemaModal(0)>Cancelar</button>
                         </div>
                     </form>
                 </div>
@@ -122,7 +134,7 @@
 
                         <div class="sistema-container-modal-content-body-buttons">
                             <button type="submit">Alterar</button>
-                            <button id="btnCancelar" type="button" onclick=toggleSistemaModal(3)>Cancelar</button>
+                            <button id="btnCancelar" type="button" onclick=toggleSistemaModal(0)>Cancelar</button>
                         </div>
                     </form>
                 </div>
@@ -142,12 +154,35 @@
                         <p id="alert">Esta ação é irreverssível, você perderá todos os dados que envolvem este estacionamento.</p>
                         <div class="sistema-container-modal-content-body-buttons">
                             <button type="submit" name="excluirEstacionamento">Excluir</button>
-                            <button id="btnCancelar" type="button" onclick=toggleSistemaModal(3)>Cancelar</button>
+                            <button id="btnCancelar" type="button" onclick=toggleSistemaModal(0)>Cancelar</button>
                         </div>
                     </form>
                 </div>
             </div>        
         </div>
+
+        <!-- MODAL: GERAR CÓDIGO -->
+
+        <div class="sistema-container-modal" id="sistema-container-modal-gerarCodigo">
+            <div class="sistema-container-modal-content">
+                <div class="sistema-container-modal-content-title">
+                    <h2 id="sistema-modal-title">Tem certeza?</h2>
+                </div>
+                <div class="sistema-container-modal-content-body">
+                    <form method="post">
+                        <input type="text" name="gerarCodigo" id="gerarCodigo" placeholder="XXXXX-XXXXX" disabled>
+                        <p id="alert">Você irá criar um código de 10 caractéres, no qual qualquer pessoa que ativa-lo será adicionado como funcionário
+                            deste estabelecimento.<br>Uso único.
+                        </p>
+                        <div class="sistema-container-modal-content-body-buttons">
+                            <button type="submit" name="excluirEstacionamento">Criar</button>
+                            <button id="btnCancelar" type="button" onclick=toggleSistemaModal(0)>Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>        
+        </div>
+
     </div>
 </main>
     <?php

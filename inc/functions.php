@@ -200,6 +200,22 @@
         </div>';
     }
 
+    function getEstacionamentoFuncionarios($id){
+        $conn = connect();
+        
+        $stmt = $conn->prepare("SELECT * FROM funcionarios WHERE idEstacionamento = :id");
+        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+        $stmt->execute();
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if(!empty($res)){
+            $nFuncionarios = $stmt->rowCount();
+            return $nFuncionarios;
+        } else {
+            return 0;
+        }
+    }
+
     function getEstacionamentoInfo($id, $info){
         $conn = connect();
         $getInfo = $conn->prepare("SELECT * FROM estacionamentos WHERE idEstacionamento = :idEstacionamento");
@@ -257,7 +273,7 @@
 
     function getVagasCards($id){
         $qtdVagas = getEstacionamentoInfo($id, "vagas");
-        echo '<div class="sistema-container-vagas">';
+        echo '<div class="sistema-container-vagas-cards">';
         for($i = 1; $i <= $qtdVagas; $i++){
             $stts = getVagaStatus($id, $i);
             if($stts == 1){
