@@ -49,11 +49,11 @@
                 </div>
                 <div class="sistema-container-funcionarios">
                     <h2>Funcionários</h2>
-                    <p>Total de Funcionários: <?php echo getEstacionamentoFuncionarios($_GET["id"])?> funcionário(s)</p>
-                    <div class="listarFuncionarios">
+                    <p>Total de Funcionários: <?php echo getEstacionamentoQtdFuncionarios($_GET["id"])?> funcionário(s)</p>
+                    <div class="listarFuncionarios" onclick=toggleSistemaModal(5)>
                         <p>Listar funcionários</p>
                     </div>
-                    <div class="criarCodigo" onclick=toggleSistemaModal(4)>
+                    <div class="criarCodigo" onclick=toggleSistemaModal(6)>
                         <p>Criar um código</p>
                     </div>
                 </div>
@@ -182,6 +182,20 @@
                 </div>
             </div>        
         </div>
+
+        <!-- MODAL: LISTAR FUNCIONÁRIOS -->
+
+        <div class="sistema-container-modal" id="sistema-container-modal-listarFuncionarios">
+            <div class="sistema-container-modal-content">
+                <div class="sistema-container-modal-content-title">
+                    <h2 id="sistema-modal-title">Lista de Funcionários</h2>
+                </div>
+                <div class="sistema-container-modal-content-body">
+                    <?php getEstacionamentoFuncionarios($_GET["id"]); ?>
+                </div>
+                <button id="btnCancelar" type="button" onclick=toggleSistemaModal(0)>Cancelar</button>              
+            </div>        
+        </div>        
 
     </div>
 </main>

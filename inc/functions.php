@@ -202,6 +202,46 @@
 
     function getEstacionamentoFuncionarios($id){
         $conn = connect();
+        $getFuncionarios = $conn->prepare("SELECT * FROM funcionarios WHERE idEstacionamento = :idEstacionamento");
+        $getFuncionarios->bindParam('idEstacionamento', $id, PDO::PARAM_STR);
+        $getFuncionarios->execute();
+        $res = $getFuncionarios->fetchAll(PDO::FETCH_ASSOC);
+        if(!empty($res)){
+            foreach($res as $rows){
+                $userID = $rows["idUsuario"];
+                $getInfo = $conn->prepare("SELECT * FROM usuarios WHERE idUsuario = :id");
+                $getInfo->bindParam('id', $userID, PDO::PARAM_STR);
+                $getInfo->execute();
+                $res = $getInfo->fetchAll(PDO::FETCH_ASSOC);
+                if(!empty($res)){
+                    echo "<table>
+                        <tr>
+                            <th>Nome de usuário</th>
+                            <th>Email</th>
+                            <th>Opções</th>
+                        </tr>
+                    ";
+                    foreach($res as $rows){
+                        $user = $rows["userUsuario"];
+                        $email = $rows["emailUsuario"];
+                        echo "
+                        <tr>
+                            <td>$user</td>
+                            <td>$email</td>
+                            <td class='options'><i class='fa-solid fa-trash'></i></td>
+                        </tr>
+                        ";
+                    }
+                    echo "</table>";
+                }         
+            }
+        } else {
+            return "Não encontrado.";
+        }
+    }
+
+    function getEstacionamentoQtdFuncionarios($id){
+        $conn = connect();
         
         $stmt = $conn->prepare("SELECT * FROM funcionarios WHERE idEstacionamento = :id");
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);

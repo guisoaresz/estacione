@@ -42,7 +42,8 @@ function toggleSistemaModal(button){
         document.getElementById('sistema-container-modal-alterName').style.display = "none";
         document.getElementById('sistema-container-modal-alterVagas').style.display = "none";
         document.getElementById('sistema-container-modal-excluir').style.display = "none";
-        document.getElementById('sistema-container-modal-gerarCodigo').style.display = "none"; 
+        document.getElementById('sistema-container-modal-gerarCodigo').style.display = "none";
+        document.getElementById('sistema-container-modal-listarFuncionarios').style.display = "none";
     } else if(button == 1) {
         document.getElementById('sistema-container-modal-alterName').style.display = "grid";
     } else if(button == 2) {
@@ -51,5 +52,7 @@ function toggleSistemaModal(button){
         document.getElementById('sistema-container-modal-excluir').style.display = "grid";
     } else if(button == 4) {
         document.getElementById('sistema-container-modal-gerarCodigo').style.display = "grid";
+    } else if(button == 5) {
+        document.getElementById('sistema-container-modal-listarFuncionarios').style.display = "grid";
     }
 }
